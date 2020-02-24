@@ -1,4 +1,4 @@
-package com.padlet.dreamcatcher.RNPencilKit;
+package com.reactLibrary.RNPencilKit;
 
 import android.content.ContentResolver;
 import android.graphics.Bitmap;

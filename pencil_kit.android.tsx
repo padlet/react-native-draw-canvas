@@ -83,6 +83,11 @@ export class PencilKit extends React.Component<Props, State> {
 
   private onSaveCallback: SaveCallback = null
 
+  // Always true on android
+  public static isAvailable = (): boolean => {
+    return true
+  }
+
   constructor(props: Props) {
     super(props)
     this.pencilKit = React.createRef()

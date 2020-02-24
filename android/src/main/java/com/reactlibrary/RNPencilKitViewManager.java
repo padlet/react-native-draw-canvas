@@ -1,4 +1,4 @@
-package com.padlet.dreamcatcher.RNPencilKit;
+package com.reactLibrary.RNPencilKit;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;

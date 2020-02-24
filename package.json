@@ -1,8 +1,8 @@
 {
   "name": "react-native-draw-canvas",
   "title": "React Native Draw Canvas",
-  "version": "1.0.0",
-  "description": "TODO",
+  "version": "1.0.1",
+  "description": "Cross platform native draw canvas for both iOS and Android",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,8 +16,8 @@
     "react-native"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "yourname@email.com"
+    "name": "Colin Teahan",
+    "email": "colin@padlet.com"
   },
   "license": "MIT",
   "licenseFilename": "LICENSE",
