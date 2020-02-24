@@ -97,7 +97,7 @@ export class PencilKit extends React.Component<Props, State> {
     }
   }
 
-  setColor = (color: string): void => {
+  public setColor = (color: string): void => {
     this.setState({ color })
   }
 
@@ -137,14 +137,13 @@ export class PencilKit extends React.Component<Props, State> {
     const color = processColor(this.state.color)
     console.log('[APencilKit] android color:', color)
     return (
-      <View style={styles.container}>
-        <RCTPencilKitView style={styles.frame} color={color} ref={this.pencilKit} onSaveEvent={this.onSaveEvent} />
-        <View style={styles.row}>
-          <ColorPicker current={this.state.color} action={this.setColor} />
-          <Button title={'erase'} onPress={this.erase} />
-        </View>
-      </View>
-    )
+      <RCTPencilKitView
+        style={styles.frame}
+        color={color}
+        ref={this.pencilKit}
+        onSaveEvent={this.onSaveEvent}
+      />
+    );
   }
 }
 
