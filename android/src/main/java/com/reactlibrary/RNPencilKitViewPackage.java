@@ -1,4 +1,4 @@
-package com.reactLibrary.RNPencilKit;
+package com.reactlibrary;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;

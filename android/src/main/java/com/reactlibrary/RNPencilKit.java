@@ -1,4 +1,4 @@
-package com.reactLibrary.RNPencilKit;
+package com.reactlibrary;
 
 import android.content.ContentResolver;
 import android.graphics.Bitmap;
