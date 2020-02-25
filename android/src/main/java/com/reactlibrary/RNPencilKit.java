@@ -87,6 +87,7 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
         setDrawingCacheEnabled(true);
         setFocusable(true);
         setFocusableInTouchMode(true);
+        requestFocus(); // TODO: test
         setupPaint();
         Log.v(TAG, "RNPencilKit setup!");
     }
@@ -120,6 +121,7 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
 
     @Override
     protected void onDraw(Canvas canvas) {
+        Log.v(TAG, "on draw!");
 
         // Iterate through all the previous strokes
         for (Drawing savedDrawing : drawings) {
