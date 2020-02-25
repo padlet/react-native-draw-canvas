@@ -87,7 +87,6 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
         setDrawingCacheEnabled(true);
         setFocusable(true);
         setFocusableInTouchMode(true);
-        requestFocus(); // TODO: test
         setupPaint();
         Log.v(TAG, "RNPencilKit setup!");
     }
