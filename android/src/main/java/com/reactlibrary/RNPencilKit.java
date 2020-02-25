@@ -212,6 +212,8 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
+        Log.v(TAG, "on touch event...");
+
         // the number of all motion events on touch
         final int pointerCount = event.getPointerCount();
 
