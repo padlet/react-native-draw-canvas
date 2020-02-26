@@ -22,9 +22,11 @@ const styles = StyleSheet.create({
 interface Props {
   style?: 'light' | 'dark'
   color?: 'string'
+  strokeWidth?: number
 }
 interface State {
   color: string
+  strokeWidth: number
 }
 
 type SaveCallback = ({ uri: string }) => void
@@ -57,12 +59,14 @@ export class PencilKit extends React.Component<Props, State> {
     this.pencilKit = React.createRef()
     this.state = {
       color: props.color || 'black',
+      strokeWidth: props.strokeWidth || 5
     }
   }
 
   static getDerivedStateFromProps(props:Props, state:State): State {
     const color = props.color || state.color
-    return { ...state, color }
+    const strokeWidth = props.strokeWidth || state.strokeWidth
+    return { ...state, color, strokeWidth }
   }
 
   public setColor = (color: string): void => {
@@ -113,6 +117,7 @@ export class PencilKit extends React.Component<Props, State> {
     return (
       <RCTPencilKitView
         color={processColor(this.state.color)}
+        strokeWidth={this.state.strokeWidth}
         onSaveEvent={this.onSaveEvent}
         style={styles.container}
         ref={this.pencilKit}

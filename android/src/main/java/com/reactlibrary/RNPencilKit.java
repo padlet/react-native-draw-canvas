@@ -110,6 +110,10 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
         addDrawings();
     }
 
+    public void setStrokeWidth(int width) {
+        this.width = width;
+    }
+
     public void setEraserMode() {
         paintColor = Color.WHITE;
         width = WIDTH_ERASER;
@@ -148,7 +152,6 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
 
     @Override
     protected void onDraw(Canvas canvas) {
-        Log.v(TAG, "on draw!");
 
         // Iterate through all the previous strokes
         for (Drawing savedDrawing : drawings) {
@@ -240,8 +243,6 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-
-        Log.v(TAG, "on touch event...");
 
         // the number of all motion events on touch
         final int pointerCount = event.getPointerCount();

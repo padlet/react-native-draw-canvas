@@ -45,7 +45,11 @@ public class RNPencilKitViewManager extends ViewGroupManager<RNPencilKit> {
     @ReactProp(name = "color")
     public void setPaintColor(RNPencilKit pencilKit, int color) {
         pencilKit.setPaintColor(color);
+    }
 
+    @ReactProp(name = "strokeWidth")
+    public void setStrokeWidth(int strokeWidth) {
+        pencilKit.setStrokeWidth(strokeWidth);
     }
 
     @Override
