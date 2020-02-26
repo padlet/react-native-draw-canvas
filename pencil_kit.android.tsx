@@ -81,6 +81,14 @@ export class PencilKit extends React.Component<Props, State> {
     UIManager.dispatchViewManagerCommand(this.getTag(), 3, null)
   }
 
+  public setDarkMode = (): void => {
+    UIManager.dispatchViewManagerCommand(this.getTag(), 5, null)
+  }
+
+  public setLightMode = (): void => {
+    UIManager.dispatchViewManagerCommand(this.getTag(), 6, null)
+  }
+
   private draw = (): void => {
     this.setState({ color: this.state.color })
   }

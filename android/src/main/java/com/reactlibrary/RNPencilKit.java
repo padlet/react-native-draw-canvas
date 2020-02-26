@@ -68,6 +68,7 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
     private final float WIDTH_PENCIL = 5;
     private final float WIDTH_ERASER = 50;
     private float width = WIDTH_PENCIL;
+    private boolean isDarkMode = false;
 
     // defines paint and canvas
     private Paint drawPaint;
@@ -80,7 +81,6 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
 
     // tag for debugging
     private final String TAG = "PencilKit";
-
 
     public RNPencilKit(ThemedReactContext reactContext) {
         super(reactContext);
@@ -116,6 +116,14 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
         drawPaint.setColor(Color.WHITE);
         drawPaint.setStrokeWidth(width);
         addDrawings();
+    }
+
+    public void setDarkMode() {
+        setBackgroundColor(Colors.BLACK);
+    }
+
+    public void setLightMode() {
+        setBackgroundColor(Colors.WHITE);
     }
 
     @Override

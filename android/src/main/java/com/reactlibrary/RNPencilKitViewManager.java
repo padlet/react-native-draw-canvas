@@ -29,6 +29,8 @@ public class RNPencilKitViewManager extends ViewGroupManager<RNPencilKit> {
     private static final int COMMAND_REDO = 2;
     private static final int COMMAND_ERASE = 3;
     private static final int COMMAND_SAVE = 4;
+    private static final int COMMAND_DARK = 5;
+    private static final int COMMAND_LIGHT = 6;
 
     @Override
     public String getName() {
@@ -62,6 +64,11 @@ public class RNPencilKitViewManager extends ViewGroupManager<RNPencilKit> {
             case COMMAND_SAVE:
                 pencilKit.save();
                 return;
+            case COMMAND_DARK:
+                pencilKit.setDarkMode();
+                return;
+            case COMMAND_LIGHT:
+                pencilKit.setLightMode();
         }
     }
 
