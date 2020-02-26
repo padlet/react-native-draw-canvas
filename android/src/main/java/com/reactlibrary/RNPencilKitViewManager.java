@@ -48,7 +48,7 @@ public class RNPencilKitViewManager extends ViewGroupManager<RNPencilKit> {
     }
 
     @ReactProp(name = "strokeWidth")
-    public void setStrokeWidth(int strokeWidth) {
+    public void setStrokeWidth(RNPencilKit pencilKit, int strokeWidth) {
         pencilKit.setStrokeWidth(strokeWidth);
     }
 
