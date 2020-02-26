@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreImage/CoreImage.h>
 
-@interface UIImage (resize)
+@interface UIImage (resize2)
 
 - (UIImage *)normalizedImage;
 - (UIImage *)invert:(BOOL)invertWhite black:(BOOL)invertBlack;

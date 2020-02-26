@@ -6,12 +6,12 @@
 //  Copyright © 2020 Facebook. All rights reserved.
 //
 
-#import "UIImage+resize.h"
+#import "UIImage+resize2.h"
 #import <React/RCTLog.h>
 
 CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;};
 
-@implementation UIImage (resize)
+@implementation UIImage (resize2)
 
 
 - (UIImage *)imageRotatedByDegrees:(CGFloat)degrees

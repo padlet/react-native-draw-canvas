@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D00470C6240470540063216A /* RNPencilKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D00470C5240470540063216A /* RNPencilKit.m */; };
 		D00470C9240470B40063216A /* RNPencilKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D00470C8240470B40063216A /* RNPencilKitManager.m */; };
-		D0A8881A2407004E00BFADE0 /* UIImage+resize.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A888192407004E00BFADE0 /* UIImage+resize.m */; };
+		D0A8881A2407004E00BFADE0 /* UIImage+resize2.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A888192407004E00BFADE0 /* UIImage+resize2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,8 +30,8 @@
 		D00470C5240470540063216A /* RNPencilKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNPencilKit.m; sourceTree = "<group>"; };
 		D00470C7240470B40063216A /* RNPencilKitManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNPencilKitManager.h; sourceTree = "<group>"; };
 		D00470C8240470B40063216A /* RNPencilKitManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNPencilKitManager.m; sourceTree = "<group>"; };
-		D0A888182407004E00BFADE0 /* UIImage+resize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+resize.h"; sourceTree = "<group>"; };
-		D0A888192407004E00BFADE0 /* UIImage+resize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+resize.m"; sourceTree = "<group>"; };
+		D0A888182407004E00BFADE0 /* UIImage+resize2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+resize2.h"; sourceTree = "<group>"; };
+		D0A888192407004E00BFADE0 /* UIImage+resize2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+resize2.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +56,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				D0A888182407004E00BFADE0 /* UIImage+resize.h */,
-				D0A888192407004E00BFADE0 /* UIImage+resize.m */,
+				D0A888182407004E00BFADE0 /* UIImage+resize2.h */,
+				D0A888192407004E00BFADE0 /* UIImage+resize2.m */,
 				D00470C4240470540063216A /* RNPencilKit.h */,
 				D00470C5240470540063216A /* RNPencilKit.m */,
 				D00470C7240470B40063216A /* RNPencilKitManager.h */,
@@ -124,7 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D00470C9240470B40063216A /* RNPencilKitManager.m in Sources */,
-				D0A8881A2407004E00BFADE0 /* UIImage+resize.m in Sources */,
+				D0A8881A2407004E00BFADE0 /* UIImage+resize2.m in Sources */,
 				D00470C6240470540063216A /* RNPencilKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

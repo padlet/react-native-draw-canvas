@@ -7,7 +7,7 @@
 //
 
 #import "RNPencilKit.h"
-#import "UIImage+resize.h"
+#import "UIImage+resize2.h"
 
 API_AVAILABLE(ios(13.0))
 @interface RNPencilKit()

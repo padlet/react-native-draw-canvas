@@ -1,7 +1,7 @@
 {
   "name": "react-native-draw-canvas",
   "title": "React Native Draw Canvas",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Cross platform native draw canvas for both iOS and Android",
   "main": "index.js",
   "scripts": {
