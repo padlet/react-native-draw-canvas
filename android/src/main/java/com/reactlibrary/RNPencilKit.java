@@ -132,12 +132,18 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
         for (Drawing drawing : drawings)
             if (drawing.color == fromColor)
                 drawing.color = toColor;
+            else if (drawing.color == toColor)
+                drawing.color = fromColor;
         for (Drawing drawing : currents)
             if (drawing.color == fromColor)
                 drawing.color = toColor;
+            else if (drawing.color == toColor)
+                drawing.color = fromColor;
         for (Drawing drawing : scrapped)
             if (drawing.color == fromColor)
                 drawing.color = toColor;
+            else if (drawing.color == toColor)
+                drawing.color = fromColor;
     }
 
     @Override
