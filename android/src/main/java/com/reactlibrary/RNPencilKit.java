@@ -120,10 +120,24 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
 
     public void setDarkMode() {
         setBackgroundColor(Color.BLACK);
+        invertAllColors(Color.BLACK, Color.WHITE);
     }
 
     public void setLightMode() {
         setBackgroundColor(Color.WHITE);
+        invertAllColors(Color.WHITE, Color.BLACK);
+    }
+
+    public void invertAllColors(int fromColor, int toColor) {
+        for (Drawing drawing : drawings)
+            if (drawing.color == fromColor)
+                drawing.color = toColor;
+        for (Drawing drawing : currents)
+            if (drawing.color == fromColor)
+                drawing.color = toColor;
+        for (Drawing drawing : scrapped)
+            if (drawing.color == fromColor)
+                drawing.color = toColor;
     }
 
     @Override
