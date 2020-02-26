@@ -104,14 +104,16 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
 
     public void setPaintColor(int color) {
         this.paintColor = color;
-        this.width = WIDTH_PENCIL;
-        drawPaint.setStrokeWidth(width);
+//        this.width = WIDTH_PENCIL;
+//        drawPaint.setStrokeWidth(width);
         this.drawPaint.setColor(this.paintColor);
         addDrawings();
     }
 
     public void setStrokeWidth(int width) {
         this.width = width;
+        drawPaint.setStrokeWidth(width);
+        addDrawings();
     }
 
     public void setEraserMode() {
