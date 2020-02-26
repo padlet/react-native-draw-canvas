@@ -117,7 +117,7 @@ export class PencilKit extends React.Component<Props, State> {
     return (
       <RCTPencilKitView
         color={processColor(this.state.color)}
-        strokeWidth={this.state.strokeWidth}
+        strokeWidth={+this.state.strokeWidth}
         onSaveEvent={this.onSaveEvent}
         style={styles.container}
         ref={this.pencilKit}

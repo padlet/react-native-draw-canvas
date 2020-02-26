@@ -134,6 +134,9 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
         invertAllColors(Color.WHITE, Color.BLACK);
     }
 
+    // when switching between light and dark mode we need to swap all the strokes that
+    // were used as eraser strokes (same color as bg) and then we also need to swap all
+    // the strokes that are the new background color to the old color.
     public void invertAllColors(int fromColor, int toColor) {
         for (Drawing drawing : drawings)
             if (drawing.color == fromColor)
