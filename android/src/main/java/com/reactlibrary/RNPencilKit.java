@@ -119,11 +119,11 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
     }
 
     public void setDarkMode() {
-        setBackgroundColor(Colors.BLACK);
+        setBackgroundColor(Color.BLACK);
     }
 
     public void setLightMode() {
-        setBackgroundColor(Colors.WHITE);
+        setBackgroundColor(Color.WHITE);
     }
 
     @Override
