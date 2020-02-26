@@ -133,6 +133,8 @@ RCT_EXPORT_MODULE()
 - (void)takeScreenshot:(void(^)(UIImage *image))completion {
   // seems to be a bit of heisenbug here, this log statement fixes an issue with the bounds
   RCTLogInfo(@"[RNPencilKit] taking screenshot: (%f, %f)", self.canvas.bounds.size.width, self.canvas.bounds.size.height);
+  RCTLogInfo(@"[RNPencilKit] taking screenshot (frame): (%f, %f)", self.canvas.frame.size.width, self.canvas.frame.size.height);
+  RCTLogInfo(@"[RNPencilKit] scale %lf", [UIScreen mainScreen].scale);
   UIGraphicsBeginImageContextWithOptions(self.canvas.bounds.size, false, [UIScreen mainScreen].scale);
   [self drawViewHierarchyInRect:self.canvas.bounds afterScreenUpdates:true];
   UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -218,3 +220,4 @@ RCT_EXPORT_MODULE()
 }
 
 @end
+
