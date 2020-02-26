@@ -125,13 +125,19 @@ public class RNPencilKit extends ReactViewGroup implements LifecycleEventListene
     }
 
     public void setDarkMode() {
-        setBackgroundColor(Color.BLACK);
-        invertAllColors(Color.BLACK, Color.WHITE);
+        if (isDarkMode == false) {
+            setBackgroundColor(Color.BLACK);
+            invertAllColors(Color.BLACK, Color.WHITE);
+            isDarkMode = true;
+        }
     }
 
     public void setLightMode() {
-        setBackgroundColor(Color.WHITE);
-        invertAllColors(Color.WHITE, Color.BLACK);
+        if (isDarkMode == true) {
+            setBackgroundColor(Color.WHITE);
+            invertAllColors(Color.WHITE, Color.BLACK);
+            isDarkMode = false;
+        }
     }
 
     // when switching between light and dark mode we need to swap all the strokes that
