@@ -8,7 +8,9 @@ A cross-platform native drawing canvas which allows users to create hand made pa
 
 ## Getting started
 
-`$ npm install react-native-draw-canvas --save`
+```bash
+$ yarn add git+ssh://git@github.com:padlet/react-native-draw-canvas.git
+```
 
 ## Usage
 ```javascript
