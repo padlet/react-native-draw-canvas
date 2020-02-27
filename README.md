@@ -1,10 +1,10 @@
 # react-native-draw-canvas
 
-A cross-platform native drawing canvas which allows users to create hand made paintings with their fingers. On iOS this package uses the native PencilKit and on android it is implemented customly. While both the iOS and Android versions differ greatly, they share a common API that is exposed via JS. 
+A cross-platform native drawing canvas which allows users to create hand made paintings with their fingers. This package uses the native PencilKit on iOS and has a custom implementation on Android. While both the iOS and Android versions differ greatly, they share a common API that is exposed via their instance methods.
 
 **Requirements**
- • iOS 13.0+
- • react-native 0.60.0+
+* iOS 13.0+
+* react-native 0.60.0+
 
 ## Getting started
 
@@ -34,7 +34,7 @@ this.pencilKit.setDarkMode()
 this.pencilKit.setLightMode()
 ```
 
-To get the drawing as an image (as well as save to gallery)
+To get the drawing as an image (as well as save to gallery) also make sure to request READ & WRITE permissions before using!
 ```javascript
  this.pencilKit.getDrawing(data => {
    // data has the following shape
