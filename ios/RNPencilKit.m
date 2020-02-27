@@ -130,18 +130,31 @@ RCT_EXPORT_MODULE()
   return [UITraitCollection currentTraitCollection].userInterfaceStyle;
 }
 
+- (CGRect)getCorrectSize {
+    CGRect pickerSize = [self.picker frameObscuredInView:self];
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    CGSize canvasSize = self.canvas.bounds.size;
+    CGFloat scale = 1.0;
+    int wModulo = (int)canvasSize.width % (int)screenSize.width;
+    int hModulo = (int)canvasSize.height % (int)screenSize.height;
+    CGFloat wDiv = canvasSize.width / screenSize.width;
+    CGFloat hDiv = canvasSize.height / screenSize.height;
+    if (wModulo == 0) scale = wDiv;
+    else if (hModulo == 0) scale = hDiv;
+    CGFloat width = canvasSize.width / scale;
+    CGFloat height = canvasSize.height / scale - pickerSize.size.height;
+    CGPoint origin = self.canvas.bounds.origin;
+    return CGRectMake(origin.x, origin.y, width, height);
+}
+
 - (void)takeScreenshot:(void(^)(UIImage *image))completion {
-  // seems to be a bit of heisenbug here, this log statement fixes an issue with the bounds
-  RCTLogInfo(@"[RNPencilKit] taking screenshot: (%f, %f)", self.canvas.bounds.size.width, self.canvas.bounds.size.height);
-  RCTLogInfo(@"[RNPencilKit] taking screenshot (frame): (%f, %f)", self.canvas.frame.size.width, self.canvas.frame.size.height);
-  CGSize sc = [[UIScreen mainScreen] bound].size;
-  RCTLogInfo(@"[RNPencilKit] screen width: %f height: %f", sc.width, sc.height);
-  RCTLogInfo(@"[RNPencilKit] scale %lf", [UIScreen mainScreen].scale);
-  UIGraphicsBeginImageContextWithOptions(self.canvas.bounds.size, false, [UIScreen mainScreen].scale);
-  [self drawViewHierarchyInRect:self.canvas.bounds afterScreenUpdates:true];
-  UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext();
-  completion(image);
+    CGRect rect = [self getCorrectSize];
+    UIGraphicsBeginImageContextWithOptions(rect.size, YES, 0.0f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.layer renderInContext:context];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    completion(image);
 }
 
 - (void)setDarkMode {
@@ -222,4 +235,5 @@ RCT_EXPORT_MODULE()
 }
 
 @end
+
 
