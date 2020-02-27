@@ -22,24 +22,19 @@ import { DrawCanvas } from 'react-native-draw-canvas';
 
 As well as rendering the canvas view as a component, this class has several instance methods that can be called using the objects ref once instantiated.
 
-To set the stroke color without a prop (android only)
-```javascript
-this.pencilKit.setColor('black')
-```
-
 To undo / redo the previous drawing action
 ```javascript
 this.pencilKit.undo()
 this.pencilKit.redo()
 ```
 
-To change the theme of the drawing
+To change the theme of the drawing (changes background and inverts black and white strokes)
 ```javascript
 this.pencilKit.setDarkMode()
 this.pencilKit.setLightMode()
 ```
 
-To get the drawing as an image
+To get the drawing as an image (as well as save to gallery)
 ```javascript
  this.pencilKit.getDrawing(data => {
    // data has the following shape
