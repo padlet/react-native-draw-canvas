@@ -76,8 +76,7 @@ RCT_EXPORT_MODULE()
 
 - (void)setToolPicker API_AVAILABLE(ios(13)) {
   RCTLogInfo(@"[RNPencilKit] creating tool bar!");
-  UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-  self.picker = [PKToolPicker sharedToolPickerForWindow:window];
+  self.picker = [[PKToolPicker alloc] init];
   [self.picker addObserver:self.canvas];
   [self.picker setVisible:true forFirstResponder:self.canvas];
   [self.canvas becomeFirstResponder];
