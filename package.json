@@ -28,5 +28,8 @@
     "react": "^17.0.2",
     "react-native": "^0.68.2",
     "typescript": "^3.7.5"
+  },
+  "resolutions": {
+    "minimist": "1.2.8"
   }
 }
