@@ -30,6 +30,7 @@
     "typescript": "^3.7.5"
   },
   "resolutions": {
-    "minimist": "1.2.8"
+    "minimist": "1.2.8",
+    "shell-quote": "1.8.3"
   }
 }
