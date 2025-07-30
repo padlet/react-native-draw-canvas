@@ -122,7 +122,6 @@ def kotlin_version = getExtOrDefault('kotlin_version')
 dependencies {
   // noinspection GradleDynamicVersion
   api 'com.facebook.react:react-native:+'
-  api project(':padlet_rn-foundation')
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
   implementation project(path: ':react-native-webview')
   testImplementation 'org.junit.jupiter:junit-jupiter:5.6.2'
