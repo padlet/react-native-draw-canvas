@@ -1,4 +1,4 @@
-name: Build TS
+name: Scan with Semgrep CE
 on:
   push:
     branches:
