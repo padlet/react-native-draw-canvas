@@ -1,0 +1,149 @@
+rules:
+  # JavaScript/TypeScript Security Rules
+  - id: react-native-hardcoded-secrets
+    pattern-either:
+      - pattern: |
+          const $VAR = "$SECRET"
+      - pattern: |
+          let $VAR = "$SECRET"
+      - pattern: |
+          var $VAR = "$SECRET"
+    metavariable-regex:
+      metavariable: $SECRET
+      regex: (?i)(password|secret|key|token|api_key|apikey|auth)
+    message: "Potential hardcoded secret found"
+    languages: [javascript, typescript]
+    severity: ERROR
+
+  - id: react-native-unsafe-require
+    pattern: require($PATH)
+    metavariable-regex:
+      metavariable: $PATH
+      regex: ^[^"']*\$
+    message: "Dynamic require() calls can be dangerous"
+    languages: [javascript, typescript]
+    severity: WARNING
+
+  # Java Android Security Rules
+  - id: android-external-storage-usage
+    pattern-either:
+      - pattern: Environment.getExternalStorageDirectory()
+      - pattern: Environment.getExternalStoragePublicDirectory($DIR)
+    message: "External storage access detected - ensure proper permissions"
+    languages: [java]
+    severity: INFO
+
+  - id: android-logging-sensitive-data
+    pattern-either:
+      - pattern: Log.d($TAG, $MSG)
+      - pattern: Log.v($TAG, $MSG)
+      - pattern: Log.i($TAG, $MSG)
+      - pattern: Log.w($TAG, $MSG)
+      - pattern: Log.e($TAG, $MSG)
+    metavariable-regex:
+      metavariable: $MSG
+      regex: (?i).*(password|secret|key|token|credential).*
+    message: "Potential sensitive data in log statement"
+    languages: [java]
+    severity: ERROR
+
+  - id: android-file-permissions
+    pattern-either:
+      - pattern: new FileOutputStream($FILE)
+      - pattern: new FileInputStream($FILE)
+    message: "File I/O operation - verify proper permissions and validation"
+    languages: [java]
+    severity: INFO
+
+  # Objective-C iOS Security Rules
+  - id: ios-nslog-sensitive-data
+    pattern: NSLog($FORMAT, ...)
+    metavariable-regex:
+      metavariable: $FORMAT
+      regex: (?i).*(password|secret|key|token|credential).*
+    message: "Potential sensitive data in NSLog statement"
+    languages: [objc]
+    severity: ERROR
+
+  - id: ios-file-manager-usage
+    pattern-either:
+      - pattern: |
+          [[NSFileManager defaultManager] $METHOD:...]
+      - pattern: |
+          [NSFileManager.defaultManager $METHOD:...]
+    message: "File manager usage detected - ensure proper file handling"
+    languages: [objc]
+    severity: INFO
+
+  # General Cross-Platform Rules
+  - id: potential-command-injection
+    pattern-either:
+      - pattern: Runtime.getRuntime().exec($CMD)
+      - pattern: ProcessBuilder($CMD)
+      - pattern: system($CMD)
+    message: "Potential command injection vulnerability"
+    languages: [java, objc]
+    severity: ERROR
+
+  - id: weak-crypto-usage
+    pattern-either:
+      - pattern: MD5
+      - pattern: SHA1
+      - pattern: DES
+    message: "Weak cryptographic algorithm detected"
+    languages: [java, objc, javascript, typescript]
+    severity: WARNING
+
+  # React Native Specific Rules
+  - id: react-native-bridge-exposure
+    pattern-either:
+      - pattern: |
+          @ReactMethod
+          public $RETURN_TYPE $METHOD_NAME(...) {
+            ...
+          }
+      - pattern: |
+          RCT_EXPORT_METHOD($METHOD_NAME)
+    message: "Native method exposed to JavaScript bridge - ensure proper validation"
+    languages: [java, objc]
+    severity: INFO
+
+  - id: react-native-unsafe-webview
+    pattern-either:
+      - pattern: |
+          <WebView $PROPS />
+      - pattern: |
+          WebView($PROPS)
+    message: "WebView usage detected - ensure secure configuration"
+    languages: [javascript, typescript]
+    severity: INFO
+
+  # Build Configuration Security
+  - id: gradle-http-repository
+    pattern-either:
+      - pattern: |
+          maven {
+            url "http://..."
+          }
+      - pattern: |
+          maven { url 'http://...' }
+    message: "HTTP repository URL found - use HTTPS for security"
+    languages: [gradle]
+    severity: WARNING
+
+# Configuration for file inclusion/exclusion
+paths:
+  include:
+    - "*.js"
+    - "*.ts" 
+    - "*.tsx"
+    - "*.java"
+    - "*.m"
+    - "*.h"
+    - "*.gradle"
+    - "build.gradle"
+  exclude:
+    - "node_modules/"
+    - "build/"
+    - "dist/"
+    - ".git/"
