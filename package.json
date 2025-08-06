@@ -1,30 +1,30 @@
 {
-  "name": "react-native-draw-canvas",
-  "title": "React Native Draw Canvas",
-  "version": "1.2.2",
-  "description": "Cross platform native draw canvas for both iOS and Android",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/padlet/react-native-draw-canvas.git",
-    "baseUrl": "https://github.com/padlet/react-native-draw-canvas"
-  },
-  "keywords": ["react-native"],
-  "author": {
-    "name": "Colin Teahan",
-    "email": "colin@padlet.com"
-  },
-  "license": "MIT",
-  "licenseFilename": "LICENSE",
-  "readmeFilename": "README.md",
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
-  },
-  "devDependencies": {
-    "typescript": "^3.7.5"
-  }
+	"name": "react-native-draw-canvas",
+	"title": "React Native Draw Canvas",
+	"version": "1.3.0",
+	"description": "Cross platform native draw canvas for both iOS and Android",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/padlet/react-native-draw-canvas.git",
+		"baseUrl": "https://github.com/padlet/react-native-draw-canvas"
+	},
+	"keywords": ["react-native"],
+	"author": {
+		"name": "Colin Teahan",
+		"email": "colin@padlet.com"
+	},
+	"license": "MIT",
+	"licenseFilename": "LICENSE",
+	"readmeFilename": "README.md",
+	"peerDependencies": {
+		"react": "*",
+		"react-native": "*"
+	},
+	"devDependencies": {
+		"typescript": "^3.7.5"
+	}
 }
