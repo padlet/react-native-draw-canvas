@@ -214,11 +214,11 @@ RCT_EXPORT_MODULE()
 }
 
 - (void)displayProperties:(id)object {
-  RCTLogInfo(@"[XCODE] Displaying methods...");
+  RCTLogInfo(@"[XCODE] Displaying properties...");
   unsigned int count = 0;
   objc_property_t *properties = class_copyPropertyList(object_getClass(object), &count);
   
-  RCTLogInfo(@"[XCODE] Found %d methods on %@",count,[object description]);
+  RCTLogInfo(@"[XCODE] Found %d properties on %@",count,[object description]);
   for (int i=0; i<count; i++) {
     objc_property_t property = properties[i];
     NSString *propertyName = [NSString stringWithFormat:@"%s", property_getName(property)];

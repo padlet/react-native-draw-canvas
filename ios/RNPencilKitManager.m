@@ -74,7 +74,7 @@ RCT_EXPORT_METHOD(setDarkMode:(nonnull NSNumber *)reactTag) {
       RCTLogWarn(@"[RNPencilViewManager] Cannot find NativeView with tag #%@", viewRegistry);
       return;
     }
-    RCTLogInfo(@"[RNPencilViewManager] setting tool picker...");
+    RCTLogInfo(@"[RNPencilViewManager] setting dark mode...");
     [view setDarkMode];
   }];
 }
@@ -86,7 +86,7 @@ RCT_EXPORT_METHOD(setLightMode:(nonnull NSNumber *)reactTag) {
       RCTLogWarn(@"[RNPencilViewManager] Cannot find NativeView with tag #%@", viewRegistry);
       return;
     }
-    RCTLogInfo(@"[RNPencilViewManager] setting tool picker...");
+    RCTLogInfo(@"[RNPencilViewManager] setting light mode...");
     [view setLightMode];
   }];
 }
@@ -110,7 +110,7 @@ RCT_EXPORT_METHOD(redo:(nonnull NSNumber *)reactTag) {
       RCTLogWarn(@"[RNPencilViewManager] Cannot find NativeView with tag #%@", viewRegistry);
       return;
     }
-    RCTLogInfo(@"[RNPencilViewManager] undo...");
+    RCTLogInfo(@"[RNPencilViewManager] redo...");
     [view redo];
   }];
 }
